@@ -1,3 +1,12 @@
+/**************************************************************************
+Copyright:2017ï¼Œmoney89757
+File name:main.c
+Description:è¿ç”¨PICç³»åˆ—å•ç‰‡æœºæŽ§åˆ¶
+Authorï¼šmoney89757
+Versionï¼šV0.1
+Dateï¼š2017-9-18
+Historyï¼š2017-9-18 : æ›´æ–°ä¸€äº›æ³¨é‡Šå’Œç«¯å£
+**************************************************************************/
 #include "XAD168C02.h"
 
 #define CONFIG1 IO_MODE16  & LVTEN_OFF & WDTE_OFF &RDSEL_ON&CRY_OFF&OSTE_ON   
@@ -45,16 +54,16 @@ void main ()
 	CLKPR=0x80;
 	CLKPR=0x00;
 	while(CLKPCE);
-	TRISA=0xff;		//ÉèÖÃA¿Ú·½Ïò¼Ä´æÆ÷
-	TRISB=0xfe;		//ÉèÖÃB¿Ú·½Ïò¼Ä´æÆ÷
-	PORTA=0xff;		//ÉèÖÃA¿ÚÊý¾ÝÎ»
-	PORTB=0xfe;		//ÉèÖÃB¿ÚÊý¾ÝÎ»	
+	TRISA=0xff;		//è®¾ç½®Aå£æ–¹å‘å¯„å­˜å™¨
+	TRISB=0xfe;		//è®¾ç½®Bå£æ–¹å‘å¯„å­˜å™¨
+	PORTA=0xff;		//è®¾ç½®Aå£æ•°æ®ä½
+	PORTB=0xfe;		//è®¾ç½®Bå£æ•°æ®ä½	
 	while(1)
 	{
-	SEVEN_COLOR_METROR_HEAD();//Æß²ÊÁ÷ÐÇ´ø
-	SEVEN_SEGMENT_COLOR_BOTH_BLACK();//Æß¶ÎÁ÷Ë®Á½¶ËºÚ
-	SEVEN_SHADE_COLOR_BOTH_BLACK();//Æß²Ê½¥±äÖÐ¼äÁÁÁ½¶Ë°µ	
-	SEVEN_COLOR_COLOD();//ÆßÉ«Æ®´ø
+	SEVEN_COLOR_METROR_HEAD();//ä¸ƒå½©æµæ˜Ÿå¸¦
+	SEVEN_SEGMENT_COLOR_BOTH_BLACK();//ä¸ƒæ®µæµæ°´ä¸¤ç«¯é»‘
+	SEVEN_SHADE_COLOR_BOTH_BLACK();//ä¸ƒå½©æ¸å˜ä¸­é—´äº®ä¸¤ç«¯æš—	
+	SEVEN_COLOR_COLOD();//ä¸ƒè‰²é£˜å¸¦
 	}
 }
 void RZCode_SendDat()
@@ -63,7 +72,7 @@ void RZCode_SendDat()
 	#asm
 red0:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -74,7 +83,7 @@ Red=Red<<1;
 #asm
 red1:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -85,7 +94,7 @@ Red=Red<<1;
 	#asm
 red2:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -96,7 +105,7 @@ Red=Red<<1;
 	#asm
 red3:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -107,7 +116,7 @@ Red=Red<<1;
 	#asm
 red4:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -118,7 +127,7 @@ Red=Red<<1;
 	#asm
 red5:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -129,7 +138,7 @@ Red=Red<<1;
 	#asm
 red6:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -140,7 +149,7 @@ Red=Red<<1;
 	#asm
 red7:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -151,7 +160,7 @@ Green=Green<<1;
 	#asm				
 green0:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -162,7 +171,7 @@ Green=Green<<1;
 	#asm
 green1:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -173,7 +182,7 @@ Green=Green<<1;
 	#asm
 green2:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -184,7 +193,7 @@ Green=Green<<1;
 	#asm
 green3:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -195,7 +204,7 @@ Green=Green<<1;
 	#asm
 green4:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -206,7 +215,7 @@ Green=Green<<1;
 	#asm
 green5:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -217,7 +226,7 @@ Green=Green<<1;
 	#asm
 green6:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -228,7 +237,7 @@ Green=Green<<1;
 	#asm
 green7:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -241,7 +250,7 @@ Blue=Blue<<1;
 
 blue0:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -252,7 +261,7 @@ Blue=Blue<<1;
 	#asm
 blue1:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -263,7 +272,7 @@ Blue=Blue<<1;
 	#asm
 blue2:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -274,7 +283,7 @@ Blue=Blue<<1;
 	#asm
 blue3:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -285,7 +294,7 @@ Blue=Blue<<1;
 	#asm
 blue4:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -296,7 +305,7 @@ Blue=Blue<<1;
 	#asm
 blue5:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -307,7 +316,7 @@ Blue=Blue<<1;
 	#asm
 blue6:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -318,7 +327,7 @@ Blue=Blue<<1;
 	#asm
 blue7:	
 		bsf 0x006,0;
-		btfss 0x003,0;//Îª1Ìø¹ý
+		btfss 0x003,0;//ä¸º1è·³è¿‡
 		bcf 0x006,0;
 		nop;
 		nop;
@@ -330,10 +339,10 @@ blue7:
 
 
 /***********************************************************************************
-* º¯ÊýÃû³Æ£ºSEVEN_COLOR_METROR_HEAD()
-* ¹¦ÄÜÃèÊö£ºÆß²ÊÁ÷ÐÇ´ø
-* Èë¿Ú²ÎÊý£º
-* ³ö¿Ú²ÎÊý£ºÎÞ
+* å‡½æ•°åç§°ï¼šSEVEN_COLOR_METROR_HEAD()
+* åŠŸèƒ½æè¿°ï¼šä¸ƒå½©æµæ˜Ÿå¸¦
+* å…¥å£å‚æ•°ï¼š
+* å‡ºå£å‚æ•°ï¼šæ— 
 ************************************************************************************/
 void SEVEN_COLOR_METROR_HEAD(void)
 {
@@ -418,10 +427,10 @@ void SEVEN_COLOR_METROR_HEAD(void)
 	}
 }
 /***********************************************************************************
-* º¯ÊýÃû³Æ£ºSEVEN_SHADE_COLOR_BOTH_BLACK()
-* ¹¦ÄÜÃèÊö£ºÆß²Ê½¥±äÖÐ¼äÁÁÁ½¶Ë°µ
-* Èë¿Ú²ÎÊý£º
-* ³ö¿Ú²ÎÊý£ºÎÞ
+* å‡½æ•°åç§°ï¼šSEVEN_SHADE_COLOR_BOTH_BLACK()
+* åŠŸèƒ½æè¿°ï¼šä¸ƒå½©æ¸å˜ä¸­é—´äº®ä¸¤ç«¯æš—
+* å…¥å£å‚æ•°ï¼š
+* å‡ºå£å‚æ•°ï¼šæ— 
 ************************************************************************************/
 void SEVEN_SHADE_COLOR_BOTH_BLACK(void)
 {
@@ -513,10 +522,10 @@ void SEVEN_SHADE_COLOR_BOTH_BLACK(void)
 }
 
 /***********************************************************************************
-* º¯ÊýÃû³Æ£ºSEVEN_SEGMENT_COLOR_BOTH_BLACK()
-* ¹¦ÄÜÃèÊö£ºÆß¶ÎÁ÷Ë®Á½¶ËºÚ
-* Èë¿Ú²ÎÊý£º
-* ³ö¿Ú²ÎÊý£ºÎÞ
+* å‡½æ•°åç§°ï¼šSEVEN_SEGMENT_COLOR_BOTH_BLACK()
+* åŠŸèƒ½æè¿°ï¼šä¸ƒæ®µæµæ°´ä¸¤ç«¯é»‘
+* å…¥å£å‚æ•°ï¼š
+* å‡ºå£å‚æ•°ï¼šæ— 
 ************************************************************************************/
 void SEVEN_SEGMENT_COLOR_BOTH_BLACK(void)
 {
@@ -602,10 +611,10 @@ void SEVEN_SEGMENT_COLOR_BOTH_BLACK(void)
 }
 
 /***********************************************************************************
-* º¯ÊýÃû³Æ£ºGREEN_COLOR_COLOD()
-* ¹¦ÄÜÃèÊö£ºÆßÉ«Æ®´ø
-* Èë¿Ú²ÎÊý£º
-* ³ö¿Ú²ÎÊý£ºÎÞ
+* å‡½æ•°åç§°ï¼šGREEN_COLOR_COLOD()
+* åŠŸèƒ½æè¿°ï¼šä¸ƒè‰²é£˜å¸¦
+* å…¥å£å‚æ•°ï¼š
+* å‡ºå£å‚æ•°ï¼šæ— 
 ************************************************************************************/
 void SEVEN_COLOR_COLOD(void)
 {
