@@ -7,8 +7,12 @@ Version：V0.1
 Date：2017-9-18
 History：2017-9-18 : 更新一些注释和端口
 **************************************************************************/
+
 #include "XAD168C02.h"
 
+/**************************************************************************
+Description:用户配置值Configuration
+**************************************************************************/
 #define CONFIG1 IO_MODE16  & LVTEN_OFF & WDTE_OFF &RDSEL_ON&CRY_OFF&OSTE_ON   
 #define CONFIG2 OTP_MOD4K & BOR20V & FOSC_RC20M & RESETE_OFF&FOSC_HS
 #define CONFIG3 OTP_4K_0  & SUT_ON & SUT_0
@@ -21,6 +25,9 @@ __CONFIG(CONFIG3);
 
 #define LEDNUM 50
 
+/**************************************************************************
+Description:显示状态
+**************************************************************************/
 void SEVEN_COLOR_COVER_CENTER_SIDE_CHANGE(void);
 void RZCode_SendDat(void);
 void SEVEN_COLOR_METROR_HEAD(void);
@@ -66,6 +73,10 @@ void main ()
 	SEVEN_COLOR_COLOD();//七色飘带
 	}
 }
+
+/**************************************************************************
+Description:RGB三色灯底层驱动
+**************************************************************************/
 void RZCode_SendDat()
 {
 	Red=Red<<1;		
